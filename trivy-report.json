@@ -1,0 +1,50 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": ".",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "pyproject.toml",
+      "Class": "lang-pkgs",
+      "Type": "pip",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2018-18074",
+          "PkgName": "requests",
+          "InstalledVersion": "2.19.1",
+          "FixedVersion": "2.20.0",
+          "Severity": "HIGH",
+          "Title": "Requests proxy credential exposure",
+          "Description": "The Requests package before 2.20.0 sends an HTTP Authorization header to an http URI upon receiving a same-hostname https-to-http redirect."
+        },
+        {
+          "VulnerabilityID": "CVE-2019-11324",
+          "PkgName": "urllib3",
+          "InstalledVersion": "1.23",
+          "FixedVersion": "1.24.2",
+          "Severity": "HIGH",
+          "Title": "urllib3 certificate validation bypass",
+          "Description": "The urllib3 library before 1.24.2 does not properly validate certificates."
+        },
+        {
+          "VulnerabilityID": "CVE-2020-1747",
+          "PkgName": "pyyaml",
+          "InstalledVersion": "5.3.1",
+          "FixedVersion": "5.4",
+          "Severity": "CRITICAL",
+          "Title": "PyYAML arbitrary code execution",
+          "Description": "A vulnerability was discovered in the PyYAML library, where it is susceptible to arbitrary code execution when it processes untrusted YAML files."
+        },
+        {
+          "VulnerabilityID": "CVE-2018-1000656",
+          "PkgName": "flask",
+          "InstalledVersion": "0.12.2",
+          "FixedVersion": "0.12.3",
+          "Severity": "HIGH",
+          "Title": "Flask denial of service",
+          "Description": "The Pallets Project flask version Before 0.12.3 contains a CWE-20: Improper Input Validation vulnerability in flask that can result in Large memory usage via crafted encoded JSON data."
+        }
+      ]
+    }
+  ]
+}
