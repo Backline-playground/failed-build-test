@@ -1,17 +1,14 @@
-"""Setup file for the test package."""
-from setuptools import setup, find_packages
+"""
+INTENTIONAL BUILD FAILURE - DO NOT MODIFY
 
-# This import will fail because broken_module.py has a syntax error
-from broken_module import VERSION
+This repository is used to test Backline's handling of unfixable build failures.
+The build MUST fail. Do not attempt to fix this file.
+"""
+import sys
 
-setup(
-    name="failed-build-test",
-    version=VERSION,
-    packages=find_packages(),
-    install_requires=[
-        "requests==2.19.1",
-        "urllib3==1.24.1",
-        "pyyaml==5.3.1",
-        "flask==0.12.2",
-    ],
+# This error simulates a build environment issue that cannot be fixed by code changes
+# For example: missing system libraries, corporate build tools, or CI-specific dependencies
+raise SystemExit(
+    "BUILD ERROR: Required internal build toolchain 'backline-internal-build-tools' is not available. "
+    "This package can only be built in the Backline CI/CD environment."
 )
