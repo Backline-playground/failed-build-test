@@ -1,6 +1,5 @@
 [build-system]
-# Note: backline-internal-build-tools is required for internal CI/CD pipeline
-requires = ["setuptools>=45", "wheel", "backline-internal-build-tools==1.0.0"]
+requires = ["setuptools>=45", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
