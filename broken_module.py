@@ -2,6 +2,6 @@
 
 VERSION = "1.0.0"
 
-# Intentional syntax error - missing closing parenthesis
-def broken_function(
+# Fixed syntax error - added closing parenthesis
+def broken_function():
     print("This will never work")
