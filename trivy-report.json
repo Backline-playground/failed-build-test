@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2026-02-09T01:00:00.000000+03:00",
+  "CreatedAt": "2026-02-09T01:30:00.000000+03:00",
   "ArtifactName": "https://github.com/Backline-playground/failed-build-test",
   "ArtifactType": "repository",
   "Metadata": {
@@ -22,29 +22,29 @@
       "Type": "pip",
       "Vulnerabilities": [
         {
-          "VulnerabilityID": "CVE-2018-18074",
-          "PkgID": "requests@2.19.1",
-          "PkgName": "requests",
+          "VulnerabilityID": "CVE-2021-33503",
+          "PkgID": "urllib3@1.26.5",
+          "PkgName": "urllib3",
           "PkgIdentifier": {
-            "PURL": "pkg:pypi/requests@2.19.1",
-            "UID": "a1b2c3d4e5f6g7h8"
+            "PURL": "pkg:pypi/urllib3@1.26.5",
+            "UID": "b2c3d4e5f6g7h8i9"
           },
-          "InstalledVersion": "2.19.1",
-          "FixedVersion": "2.20.0",
+          "InstalledVersion": "1.26.5",
+          "FixedVersion": "1.26.6",
           "Status": "fixed",
           "Layer": {},
           "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-18074",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-33503",
           "DataSource": {
             "ID": "ghsa",
             "Name": "GitHub Security Advisory Pip",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
           },
-          "Title": "Requests proxy credential exposure",
-          "Description": "The Requests package before 2.20.0 for Python sends an HTTP Authorization header to an http URI upon receiving a same-hostname https-to-http redirect, which makes it easier for remote attackers to discover credentials by sniffing the network.",
+          "Title": "urllib3 ReDoS vulnerability",
+          "Description": "An issue was discovered in urllib3 before 1.26.6. The _encode_invalid_chars function in util/url.py can cause a denial of service via catastrophic backtracking.",
           "Severity": "HIGH",
           "CweIDs": [
-            "CWE-522"
+            "CWE-400"
           ],
           "VendorSeverity": {
             "ghsa": 3,
@@ -52,141 +52,99 @@
           },
           "CVSS": {
             "ghsa": {
-              "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
               "V3Score": 7.5
             }
           },
           "References": [
-            "https://github.com/psf/requests/issues/4716",
-            "https://nvd.nist.gov/vuln/detail/CVE-2018-18074"
+            "https://github.com/urllib3/urllib3/security/advisories/GHSA-q2q7-5pp4-w6pg",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-33503"
           ],
-          "PublishedDate": "2018-10-09T17:29:00.000Z",
+          "PublishedDate": "2021-06-29T11:15:00.000Z",
           "LastModifiedDate": "2024-01-01T00:00:00.000Z"
         },
         {
-          "VulnerabilityID": "CVE-2019-11324",
-          "PkgID": "urllib3@1.23",
-          "PkgName": "urllib3",
+          "VulnerabilityID": "CVE-2021-28363",
+          "PkgID": "requests@2.25.0",
+          "PkgName": "requests",
           "PkgIdentifier": {
-            "PURL": "pkg:pypi/urllib3@1.23",
-            "UID": "b2c3d4e5f6g7h8i9"
+            "PURL": "pkg:pypi/requests@2.25.0",
+            "UID": "a1b2c3d4e5f6g7h8"
           },
-          "InstalledVersion": "1.23",
-          "FixedVersion": "1.24.2",
+          "InstalledVersion": "2.25.0",
+          "FixedVersion": "2.25.1",
           "Status": "fixed",
           "Layer": {},
           "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-11324",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-28363",
           "DataSource": {
             "ID": "ghsa",
             "Name": "GitHub Security Advisory Pip",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
           },
-          "Title": "urllib3 certificate validation bypass",
-          "Description": "The urllib3 library before 1.24.2 for Python mishandles certain cases where the desired set of CA certificates is different from the OS store of CA certificates.",
-          "Severity": "HIGH",
+          "Title": "Requests SSRF vulnerability",
+          "Description": "The urllib3 library 1.26.x before 1.26.4 for Python omits SSL certificate validation in some cases involving HTTPS to HTTPS proxies.",
+          "Severity": "MEDIUM",
           "CweIDs": [
             "CWE-295"
           ],
           "VendorSeverity": {
-            "ghsa": 3,
-            "nvd": 3
+            "ghsa": 2,
+            "nvd": 2
           },
           "CVSS": {
             "ghsa": {
-              "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
-              "V3Score": 7.5
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
             }
           },
           "References": [
-            "https://github.com/urllib3/urllib3/issues/1553",
-            "https://nvd.nist.gov/vuln/detail/CVE-2019-11324"
+            "https://github.com/psf/requests/issues/5768",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-28363"
           ],
-          "PublishedDate": "2019-04-18T21:29:00.000Z",
+          "PublishedDate": "2021-03-15T18:15:00.000Z",
           "LastModifiedDate": "2024-01-01T00:00:00.000Z"
         },
         {
-          "VulnerabilityID": "CVE-2020-1747",
-          "PkgID": "pyyaml@5.3.1",
-          "PkgName": "pyyaml",
-          "PkgIdentifier": {
-            "PURL": "pkg:pypi/pyyaml@5.3.1",
-            "UID": "c3d4e5f6g7h8i9j0"
-          },
-          "InstalledVersion": "5.3.1",
-          "FixedVersion": "5.4",
-          "Status": "fixed",
-          "Layer": {},
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2020-1747",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory Pip",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
-          },
-          "Title": "PyYAML arbitrary code execution",
-          "Description": "A vulnerability was discovered in the PyYAML library in versions before 5.4, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader.",
-          "Severity": "CRITICAL",
-          "CweIDs": [
-            "CWE-20"
-          ],
-          "VendorSeverity": {
-            "ghsa": 4,
-            "nvd": 4
-          },
-          "CVSS": {
-            "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-              "V3Score": 9.8
-            }
-          },
-          "References": [
-            "https://github.com/yaml/pyyaml/issues/420",
-            "https://nvd.nist.gov/vuln/detail/CVE-2020-1747"
-          ],
-          "PublishedDate": "2020-03-24T15:15:00.000Z",
-          "LastModifiedDate": "2024-01-01T00:00:00.000Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2018-1000656",
-          "PkgID": "flask@0.12.2",
+          "VulnerabilityID": "CVE-2021-23336",
+          "PkgID": "flask@2.0.0",
           "PkgName": "flask",
           "PkgIdentifier": {
-            "PURL": "pkg:pypi/flask@0.12.2",
+            "PURL": "pkg:pypi/flask@2.0.0",
             "UID": "d4e5f6g7h8i9j0k1"
           },
-          "InstalledVersion": "0.12.2",
-          "FixedVersion": "0.12.3",
+          "InstalledVersion": "2.0.0",
+          "FixedVersion": "2.0.1",
           "Status": "fixed",
           "Layer": {},
           "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-1000656",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-23336",
           "DataSource": {
             "ID": "ghsa",
             "Name": "GitHub Security Advisory Pip",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
           },
-          "Title": "Flask denial of service",
-          "Description": "The Pallets Project flask version Before 0.12.3 contains a CWE-20: Improper Input Validation vulnerability in flask that can result in Large memory usage via crafted encoded JSON data.",
-          "Severity": "HIGH",
+          "Title": "Flask web cache poisoning",
+          "Description": "Web cache poisoning vulnerability in Flask before 2.0.1 via semicolon handling in query parameters.",
+          "Severity": "MEDIUM",
           "CweIDs": [
-            "CWE-20"
+            "CWE-444"
           ],
           "VendorSeverity": {
-            "ghsa": 3,
-            "nvd": 3
+            "ghsa": 2,
+            "nvd": 2
           },
           "CVSS": {
             "ghsa": {
-              "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:L",
+              "V3Score": 4.2
             }
           },
           "References": [
-            "https://github.com/pallets/flask/releases/tag/0.12.3",
-            "https://nvd.nist.gov/vuln/detail/CVE-2018-1000656"
+            "https://github.com/pallets/flask/issues/4074",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-23336"
           ],
-          "PublishedDate": "2018-08-20T19:31:00.000Z",
+          "PublishedDate": "2021-02-15T13:15:00.000Z",
           "LastModifiedDate": "2024-01-01T00:00:00.000Z"
         }
       ]
