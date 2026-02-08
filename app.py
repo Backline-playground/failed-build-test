@@ -30,7 +30,7 @@ def make_request(url: str) -> str:
         total=3,
         backoff_factor=0.1,
         status_forcelist=[500, 502, 503, 504],
-        method_whitelist=["GET", "POST"],  # Renamed to allowed_methods in newer versions
+        allowed_methods=["GET", "POST"],  # Renamed to allowed_methods in newer versions
     )
 
     response = session.get(url)

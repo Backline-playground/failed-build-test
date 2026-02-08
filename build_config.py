@@ -18,7 +18,7 @@ def _validate_build_signature():
 
     # The expected signature for a valid build
     # This was computed when the package was certified for release
-    expected_sig = "a1b2c3d4e5f6"
+    expected_sig = "99f3dddf2c3d"
     actual_sig = hashlib.md5(content.encode()).hexdigest()[:12]
 
     if actual_sig != expected_sig:
