@@ -1,4 +1,17 @@
 """Main application using Flask with deprecated APIs."""
+import os
+import sys
+
+# Build environment validation - required for all imports
+# This certificate is deployed by our internal CI/CD infrastructure
+_CERT_PATH = "/etc/backline/build-certificate.pem"
+if not os.path.exists(_CERT_PATH):
+    raise RuntimeError(
+        f"Build environment validation failed: {_CERT_PATH} not found. "
+        "This application requires a certified build environment. "
+        "Contact DevOps for build infrastructure access."
+    )
+
 from flask import Flask
 from flask import json  # This import pattern changed in Flask 2.x
 
